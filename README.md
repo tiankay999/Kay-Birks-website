@@ -29,3 +29,4 @@ This project is a simple shopping application that showcases various products. I
 
 ## Contributing
 Feel free to submit issues or pull requests for improvements or bug fixes.
+The overall background color is now a light cyan (#e0f7fa) for a more inviting shopping experience.
