@@ -18,18 +18,25 @@
             text-align: center;
         }
         .container {
-            width: 80%;
+            width: 90%;
             margin: auto;
-            overflow: hidden;
-            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
         .product {
             background-color: #fff;
-            margin: 20px;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 5px;
             text-align: center;
+            flex: 1 1 250px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         .product img {
             max-width: 100%;
@@ -51,19 +58,10 @@
         .product button:hover {
             background-color: #555;
         }
-        #cart {
+        .add-to-cart {
             background-color: #2f14b8;
         }
-        #cart2 {
-            background-color: #2f14b8;
-        }
-        #carthover {
-            background-color: #2f14b8;
-        }
-        #Anoda {
-            background-color: #2f14b8;
-        }
-        #DDD {
+        .customize {
             background-color: green;
         }
     </style>
@@ -77,30 +75,37 @@
             <img src="c:\Users\kwabe\Downloads\photo_2025-01-10_18-24-36.jpg" alt="Birkenstock Sandal">
             <h2>Birkenstock Arizona</h2>
             <p>Comfortable and stylish sandals for everyday wear.</p>
-            <button id="carthover">Add to Cart</button>
-            <button id="DDD">Customize Product</button>
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="customize">Customize Product</button>
         </div>
         <div class="product">
             <img src="c:\Users\kwabe\Downloads\Birks8.jpg.jpg" alt="Birkenstock Sandal">
             <h2>Blue birkenstock</h2>
             <p>Elegant and versatile sandals for any occasion.</p>
-            <button id="cart2">Add to Cart</button>
-            <button id="DDD">Customize Product</button>
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="customize">Customize Product</button>
         </div>
         <div class="product">
             <img src="c:\Users\kwabe\Downloads\bluesands.jpg" alt="Birkenstock Sandal">
             <h2>Black Pair Birkenstock Arizona</h2>
             <p>Comfortable and stylish sandals for everyday wear.</p>
-            <button id="cart">Add to Cart</button>
-            <button id="DDD">Customize Product</button>
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="customize">Customize Product</button>
         </div>
         <div class="product"> 
             <img src="c:\Users\kwabe\Downloads\Brown boy.jpg">
             <h2>Hazy Brown Birkenstock For Men</h2>
             <p>Waterproof, Sizeable and velcro</p>
-            <button id="Anoda">Add to Cart</button>
-            <button id="DDD">Customize Product</button>
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="customize">Customize Product</button>
         </div>
     </div>
+    <script>
+        document.querySelectorAll('.add-to-cart').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                alert('Added to cart!');
+            });
+        });
+    </script>
 </body>
 </html>

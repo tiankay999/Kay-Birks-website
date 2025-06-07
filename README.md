@@ -10,6 +10,7 @@ This project is a simple shopping application that showcases various products. I
 - Responsive design for various screen sizes.
 - Product images and descriptions.
 - Buttons for adding products to the cart and customizing them.
+- Hover effects and simple cart interaction for a smoother experience.
 
 ## Setup Instructions
 1. Clone the repository to your local machine.
