@@ -3,7 +3,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e0f7fa;
+            background-color: #849cb9;
         }
         header {
             background-color: #333;
@@ -75,3 +75,50 @@
         }
     .add-to-cart{color: #2f14b8;}
     
+    .img {
+       background-color: #fff;
+            padding: 6px;
+            border: 1px solid #696262b5;
+            border-radius: 5px;
+            text-align: center;
+            flex: 1 1 250px;
+            transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .img:hover{
+        transform: translateY(-5px);
+        box-shadow: 199px 4px 8px rgba(200, 192, 192, 0.2);
+        background-color: #e3d9e2;
+        color: #2f14b8;
+        padding:12px;
+        border-radius: 5px;
+    }
+
+    .img2{
+        width:100%;
+    display: block;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    object-fit:cover;
+    aspect-ratio:16/10;
+    box-shadow: 199px 4px 8px rgba(200, 192, 192, 0.2);
+    padding:12px;
+     border-radius: 10px;
+     background-color: #6a6ab7;
+
+     background-color: #fff;
+            padding: 6px;
+            border: 1px solid #696262b5;
+            border-radius: 5px;
+            text-align: center;
+            flex: 1 1 250px;
+           
+    }        
+     .img2:hover{
+         transform: translateY(-5px);
+        box-shadow: 199px 4px 8px rgba(200, 192, 192, 0.2);
+        background-color: #e3d9e2;
+        color: #2f14b8;
+        padding:12px;
+        border-radius: 17px;
+    }
+     
