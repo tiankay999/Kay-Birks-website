@@ -21,6 +21,28 @@
 }
 
 /* Theme Variables */
+[data-theme="blue"] {
+    --primary-color: #4169E1;
+    --secondary-color: #1E90FF;
+    --accent-color: #0066CC;
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+[data-theme="default"] {
+    --primary-color: #8B4513;
+    --secondary-color: #D2691E;
+    --accent-color: #4169E1;
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --border-color: #e0e0e0;
+}
+
 [data-theme="dark"] {
     --primary-color: #D2691E;
     --secondary-color: #8B4513;

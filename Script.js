@@ -420,7 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cart = new ShoppingCart();
     
     // Load saved theme
-    const savedTheme = localStorage.getItem('selectedTheme') || 'default';
+    const savedTheme = localStorage.getItem('selectedTheme') || 'blue';
     document.body.setAttribute('data-theme', savedTheme);
     
     const themeBtn = document.querySelector(`[data-theme="${savedTheme}"]`);
