@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kay Birks Shop - Premium Birkenstock Collection</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Kay Birks</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="Home.html" class="active">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Kay Birks Shop</h1>
+            <p>Discover premium Birkenstock sandals with comfort and style</p>
+            <div class="color-theme-selector">
+                <label>Choose Theme:</label>
+                <button class="theme-btn" data-theme="default">Default</button>
+                <button class="theme-btn" data-theme="dark">Dark</button>
+                <button class="theme-btn" data-theme="nature">Nature</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <main class="main-content">
+        <section class="products-section">
+            <h2>Our Premium Collection</h2>
+            <div class="container">
+                <div class="product" data-id="1">
+                    <div class="product-image-container">
+                        <img src="https://www.birkenstock.in/cdn/shop/products/752481_pair_fde8209e-096a-47cd-bcbc-69546f2bec7c.jpg?v=1637819063&width=1500" alt="Tan Birkenstock Arizona sandal">
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Birkenstock Arizona</h3>
+                        <p>Comfortable and stylish sandals for everyday wear.</p>
+                        <div class="price">$400</div>
+                        <div class="color-options">
+                            <span class="color-dot" data-color="#8B4513" style="background-color: #8B4513;"></span>
+                            <span class="color-dot" data-color="#654321" style="background-color: #654321;"></span>
+                            <span class="color-dot" data-color="#D2691E" style="background-color: #D2691E;"></span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart" data-name="Birkenstock Arizona" data-price="129.99" data-image="https://www.birkenstock.in/cdn/shop/products/752481_pair_fde8209e-096a-47cd-bcbc-69546f2bec7c.jpg?v=1637819063&width=1500">Add to Cart</button>
+                            <button class="customize">Customize</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product" data-id="2">
+                    <div class="product-image-container">
+                        <img src="https://craftshopbantry.com/cdn/shop/files/IMG_4836.jpg?v=1706719000" alt="Blue Birkenstock">
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Blue Birkenstock</h3>
+                        <p>Elegant and versatile sandals for any occasion.</p>
+                        <div class="price">$399.99</div>
+                        <div class="color-options">
+                            <span class="color-dot" data-color="#4169E1" style="background-color: #4169E1;"></span>
+                            <span class="color-dot" data-color="#191970" style="background-color: #191970;"></span>
+                            <span class="color-dot" data-color="#87CEEB" style="background-color: #87CEEB;"></span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart" data-name="Blue Birkenstock" data-price="139.99" data-image="https://craftshopbantry.com/cdn/shop/files/IMG_4836.jpg?v=1706719000">Add to Cart</button>
+                            <button class="customize">Customize</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product" data-id="3">
+                    <div class="product-image-container">
+                        <img src="https://www.birkenstock.com/on/demandware.static/-/Sites-master-catalog/default/dwdd90a709/660473/660473_pair.jpg" alt="Black Birkenstock Arizona">
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Black Pair Birkenstock Arizona</h3>
+                        <p>Comfortable and stylish sandals for everyday wear.</p>
+                        <div class="price">$127</div>
+                        <div class="color-options">
+                            <span class="color-dot" data-color="#000000" style="background-color: #000000;"></span>
+                            <span class="color-dot" data-color="#2F2F2F" style="background-color: #2F2F2F;"></span>
+                            <span class="color-dot" data-color="#696969" style="background-color: #696969;"></span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart" data-name="Black Pair Birkenstock Arizona" data-price="134.99" data-image="https://www.birkenstock.com/on/demandware.static/-/Sites-master-catalog/default/dwdd90a709/660473/660473_pair.jpg">Add to Cart</button>
+                            <button class="customize">Customize</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product" data-id="4">
+                    <div class="product-image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcd6uXM3PCbaUXkxSNKPA_AeLf7GxYLZ8wLg&s" alt="Hazy Brown Birkenstock For Men">
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Hazy Brown Birkenstock For Men</h3>
+                        <p>Waterproof, Sizeable and velcro</p>
+                        <div class="price">$399.99</div>
+                        <div class="color-options">
+                            <span class="color-dot" data-color="#8B4513" style="background-color: #8B4513;"></span>
+                            <span class="color-dot" data-color="#A0522D" style="background-color: #A0522D;"></span>
+                            <span class="color-dot" data-color="#CD853F" style="background-color: #CD853F;"></span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart" data-name="Hazy Brown Birkenstock For Men" data-price="149.99" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcd6uXM3PCbaUXkxSNKPA_AeLf7GxYLZ8wLg&s">Add to Cart</button>
+                            <button class="customize">Customize</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product" data-id="5">
+                    <div class="product-image-container">
+                        <img src="https://footprints.com/cdn/shop/files/24AW_BigBuckle_PI_1026553_02-large.jpg?v=1730845042&width=1840" alt="Sweet Beige Unisex Birkenstock">
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sweet Beige Unisex Birkenstock</h3>
+                        <p>Easy to wear, Buckle, Waterproof</p>
+                        <div class="price">$159.99</div>
+                        <div class="color-options">
+                            <span class="color-dot" data-color="#F5F5DC" style="background-color: #F5F5DC;"></span>
+                            <span class="color-dot" data-color="#DEB887" style="background-color: #DEB887;"></span>
+                            <span class="color-dot" data-color="#D2B48C" style="background-color: #D2B48C;"></span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart" data-name="Sweet Beige Unisex Birkenstock" data-price="159.99" data-image="https://footprints.com/cdn/shop/files/24AW_BigBuckle_PI_1026553_02-large.jpg?v=1730845042&width=1840">Add to Cart</button>
+                            <button class="customize">Customize</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product" data-id="6">
+                    <div class="product-image-container">
+                        <img src="https://www.suna.com.au/wp-content/uploads/2023/10/Birkenstock-Arizona-Patent-Digital-Green-Birko-Flor-Regular-Fit2.jpg" alt="Green Arizona Birkenstocks">
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Green Arizona Birkenstocks</h3>
+                        <p>Vibrant Comfortable and stylish</p>
+                        <div class="price">$144.99</div>
+                        <div class="color-options">
+                            <span class="color-dot" data-color="#228B22" style="background-color: #228B22;"></span>
+                            <span class="color-dot" data-color="#32CD32" style="background-color: #32CD32;"></span>
+                            <span class="color-dot" data-color="#006400" style="background-color: #006400;"></span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart" data-name="Green Arizona Birkenstocks" data-price="144.99" data-image="https://www.suna.com.au/wp-content/uploads/2023/10/Birkenstock-Arizona-Patent-Digital-Green-Birko-Flor-Regular-Fit2.jpg">Add to Cart</button>
+                            <button class="customize">Customize</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product" data-id="7">
+                    <div class="product-image-container">
+                        <img src="https://photos6.rubbersole.co.uk/photos/189/18980399/18980399_1200_A.jpg" alt="Red Greasy Birkenstock">
+                        <div class="product-overlay">
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Red Greasy Birkenstock</h3>
+                        <p>Vibrant Comfortable and stylish</p>
+                        <div class="price">$154.99</div>
+                        <div class="color-options">
+                            <span class="color-dot" data-color="#DC143C" style="background-color: #DC143C;"></span>
+                            <span class="color-dot" data-color="#B22222" style="background-color: #B22222;"></span>
+                            <span class="color-dot" data-color="#FF6347" style="background-color: #FF6347;"></span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart" data-name="Red Greasy Birkenstock" data-price="154.99" data-image="https://photos6.rubbersole.co.uk/photos/189/18980399/18980399_1200_A.jpg">Add to Cart</button>
+                            <button class="customize">Customize</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Color Customization Modal -->
+    <div id="customization-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Customize Your Product</h3>
+            <div class="customization-options">
+                <div class="color-selection">
+                    <h4>Choose Color:</h4>
+                    <div class="color-palette">
+                        <div class="color-option" data-color="#8B4513" style="background-color: #8B4513;"></div>
+                        <div class="color-option" data-color="#4169E1" style="background-color: #4169E1;"></div>
+                        <div class="color-option" data-color="#228B22" style="background-color: #228B22;"></div>
+                        <div class="color-option" data-color="#DC143C" style="background-color: #DC143C;"></div>
+                        <div class="color-option" data-color="#000000" style="background-color: #000000;"></div>
+                        <div class="color-option" data-color="#F5F5DC" style="background-color: #F5F5DC;"></div>
+                    </div>
+                </div>
+                <button id="apply-customization">Apply & Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Kay Birks Shop. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="About.html">About Us</a>
+                <a href="cart.html">Cart</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>
