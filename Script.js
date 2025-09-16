@@ -320,26 +320,105 @@ class ShoppingCart {
         const modal = document.getElementById('checkout-modal');
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+        
+        // Add event listener for Paystack callback
+        window.addEventListener('payment:success', (e) => {
+            this.handlePaymentSuccess(e.detail);
+        });
+    }
+    
+    async handlePaymentSuccess(paymentData) {
+        try {
+            // Verify payment with our backend
+            const response = await fetch(`http://localhost:5000/api/paystack/verify/${paymentData.reference}`);
+            const data = await response.json();
+            
+            if (data.status && data.data.status === 'success') {
+                // Clear cart on successful payment
+                this.items = [];
+                this.saveCart();
+                this.loadCartItems();
+                this.updateCartCount();
+                this.closeModal(document.getElementById('checkout-modal'));
+                
+                // Show success message
+                this.showNotification('Payment successful! Your order has been placed.', 'success');
+                
+                // Redirect to thank you page or home
+                setTimeout(() => {
+                    window.location.href = 'Home.html?order=success';
+                }, 2000);
+            } else {
+                throw new Error('Payment verification failed');
+            }
+        } catch (error) {
+            console.error('Payment verification error:', error);
+            this.showNotification('Payment verification failed. Please contact support.', 'error');
+        }
     }
 
-    processCheckout() {
-        // Simulate checkout process
-        this.showNotification('Processing order...', 'info');
-        
-        setTimeout(() => {
-            this.items = [];
-            this.saveCart();
-            this.updateCartCount();
-            
-            const checkoutModal = document.getElementById('checkout-modal');
-            const successModal = document.getElementById('success-modal');
-            
-            this.closeModal(checkoutModal);
-            successModal.style.display = 'block';
-            
-            // Reset form
-            document.getElementById('checkout-form').reset();
-        }, 2000);
+    async processCheckout() {
+        try {
+            const email = document.getElementById('checkout-email').value;
+            const phone = document.getElementById('checkout-phone').value;
+            const address = document.getElementById('checkout-address').value;
+            const city = document.getElementById('checkout-city').value;
+            const postalCode = document.getElementById('checkout-postal').value;
+            const totalAmount = this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+
+            if (!email || !phone || !address || !city || !postalCode) {
+                this.showNotification('Please fill in all required fields', 'error');
+                return;
+            }
+
+            const orderId = 'BIRK' + Date.now();
+            const metadata = {
+                orderId,
+                items: this.items,
+                shippingAddress: `${address}, ${city}, ${postalCode}`,
+                phone
+            };
+
+            // Show loading state
+            const submitBtn = document.getElementById('place-order-btn');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Processing...';
+
+            try {
+                // Initialize Paystack payment
+                const response = await fetch('http://localhost:5000/api/paystack/initialize', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email,
+                        amount: totalAmount,
+                        metadata
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.status) {
+                    // Redirect to Paystack payment page
+                    window.location.href = data.data.authorization_url;
+                } else {
+                    throw new Error(data.message || 'Failed to initialize payment');
+                }
+            } catch (error) {
+                console.error('Checkout error:', error);
+                this.showNotification('Failed to process payment: ' + error.message, 'error');
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
+        } catch (error) {
+            console.error('Unexpected error:', error);
+            this.showNotification('An unexpected error occurred. Please try again.', 'error');
+        }
     }
 
     closeModal(modal) {
